@@ -16,17 +16,31 @@ const autoWeb = async () => {
     height: 600
   });
   const page = await browser.newPage();
+  await humanDelay();
   await page.goto(url);
 
   const searchSelector = '#q';
+  await humanDelay();
   await page.type(searchSelector, arg);
 
   const btnSelector = '#header-search > button';
+  await humanDelay();
   await page.click(btnSelector);
   const itemSelector =
     '#ext-search > div.search-results > ul > li:nth-child(1)';
   await humanDelay();
   await page.click(itemSelector);
+  const priceSelector = '#price-button-container > span';
+  await humanDelay();
+
+  const textContent = await page.evaluate(
+    () => document.querySelector('#price-button-container > span').textContent
+  );
+
+  console.log(textContent);
+
+  await humanDelay();
+  browser.close();
 };
 
 autoWeb();
