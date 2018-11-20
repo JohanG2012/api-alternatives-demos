@@ -30,7 +30,6 @@ const autoWeb = async () => {
     '#ext-search > div.search-results > ul > li:nth-child(1)';
   await humanDelay();
   await page.click(itemSelector);
-  const priceSelector = '#price-button-container > span';
   await humanDelay();
 
   const textContent = await page.evaluate(
