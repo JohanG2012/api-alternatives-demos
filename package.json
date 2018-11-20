@@ -19,6 +19,7 @@
   "homepage": "https://github.com/JohanG2012/api-alternatives-demos#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "puppeteer": "^1.10.0"
   }
 }
